@@ -9,7 +9,7 @@
 import turtle                           # import car
 
 # Creates a new turtle data object in memory, and give it a name
-# Create a new turtle named amy.
+# Create a new turtle named fred.
 fred = turtle.Turtle()                  # Run the Turtle code which in the turtle Module
                                         # fred is a turtle 
                                         # corola = cars.Toyota()
@@ -48,23 +48,11 @@ def pentagon():
     penta_amy.color("green")
 
     # Have penta_amy draw a square
-    for side in [1, 2, 3, 4]:
+    for side in [1, 2, 3, 4, 5]:
         penta_amy.forward(100)
-        penta_amy.right(72)
-        
-    penta_amy.forward(100)
-    penta_amy.right(72)
+        penta_amy.right(72)             # 360 / 5       no of shape sides
 pentagon()
 
-
-# another method to draw a pentagon, by adding the number of sides to the list of sides
-import turtle
-penta_amy2 = turtle.Turtle()
-penta_amy2.color("green")
-
-for side in [1, 2, 3, 4, 5]:
-    penta_amy2.forward(100)
-    penta_amy2.right(72)
 
 # Draw a Hexagon
 import turtle
@@ -210,7 +198,6 @@ amy.width(10)
 rainbow = ["red", "orange", "yellow", "green", "blue", "purple"]
 
 # Draw a rainbow colored Hexagon
-# how to draw the shape
 for color in rainbow:
     amy.color(color)
     amy.forward(70)
@@ -230,8 +217,8 @@ for color in rainbow:
     amy.forward(70)
     amy.back(70)
     amy.penup()
-    amy.pendown()
     amy.right(90)
+    amy.pendown()
     amy.forward(10)
     amy.hideturtle()
 
@@ -275,3 +262,79 @@ a function that's associated with an object
 (Mary.forward(50) - اندهللى على الميثود فورارد الخاصة بالاوبجكت مارى)
 [method]
 """
+
+
+
+
+
+
+#           Draw some artistic big circle made of lots and lots of squares
+import turtle
+
+jack = turtle.Turtle()
+jack.color("yellow")
+sides = 4
+jack.speed(0)
+
+def draw_square(length1):
+    for side in range(sides):
+        jack.forward(length1)
+        jack.right(90)
+        
+for square in range(80):
+    draw_square(150)
+    jack.forward(5)
+    jack.left(5)
+        
+
+
+#               draw a random shapes with random colors and distances
+import turtle
+import random
+
+colors = ["red", "orange", "yellow", "green", "blue", "purple"]
+
+t = turtle.Turtle()
+t.width(20)
+t.penup()
+t.back(100)
+t.pendown()
+
+
+def temperature_color():
+    if step < 20:
+        return random.choice(colors)
+    elif step >= 20 and step < 40:
+        return random.choice(colors)
+    elif step >= 40 and step <60:
+        return random.choice(colors)
+    else:
+        return random.choice(colors)
+    
+for step in range(100):
+    # Change this to use a random number.
+    angle = random.randint(20,90)
+    distance = random.randint(5,70)
+    
+    t.color(temperature_color())
+    t.right(angle)
+    t.forward(distance)
+
+
+
+
+
+#           shape turtle + xcor
+import turtle
+
+t = turtle.Turtle()
+t.color("lime")
+t.width(3)
+t.penup()
+t.shape("turtle")
+
+for step in range(2000):
+    t.forward(1)
+    # Add your code here
+    if t.xcor() >= 170 or t.xcor() <= -170:
+        t.right(180)
