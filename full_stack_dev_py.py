@@ -338,3 +338,58 @@ for step in range(2000):
     # Add your code here
     if t.xcor() >= 170 or t.xcor() <= -170:
         t.right(180)
+        
+        
+        
+
+
+import unicodedata
+unicodedata.lookup("snake")
+unicodedata.lookup('LEFT CURLY BRACKET')
+unicodedata.name('/')
+unicodedata.decimal('9')
+unicodedata.category('A')  # 'L'etter, 'u'ppercase
+
+
+
+
+# Write your function definition here
+def start_K(word):
+    if word.lower()[0] == "k":
+        return True
+    return False
+# A function call like this should return True:
+print(start_K("Kelly"))
+
+# And one like this should return False:
+print(start_K("Abe"))
+
+
+
+
+
+#       predicates — methods that return True or False
+def possible_tag(word):
+    if word.startswith("<") and word.endswith(">"):
+        print(word, "could maybe be an HTML tag")
+    else:
+        print(word, "is definitely not an HTML tag (but might contain one)")
+
+
+
+
+words = ["echidna", "dingo", "crocodile", "bunyip"]
+words.append("platypus")
+words.extend("abc")
+words.extend(["kangaroo", "wallaby"])
+words.reverse()
+words.sort()
+print(words)
+
+
+my_list_append = [1, 2, 3]
+my_list_extend = [1, 2, 3]
+my_list_append.append([4, 5, 6])
+my_list_extend.extend([4,5,6])
+my_list_append
+my_list_extend
