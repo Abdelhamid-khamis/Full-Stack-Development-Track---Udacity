@@ -393,3 +393,60 @@ my_list_append.append([4, 5, 6])
 my_list_extend.extend([4,5,6])
 my_list_append
 my_list_extend
+
+
+
+#       is_substring function
+
+def is_substring(substring,string):
+    index = 0
+    while index < len(string):
+        # pattern is string[ index , index + len(string)]
+        if string[ index : index + len(substring)] == substring:
+            return True
+        index += 1
+    return False
+
+# Below are some calls you can use to test it
+
+# This one should return False
+print(is_substring('bad', 'abracadabra'))
+print(is_substring('ff', 'waffles'))
+# This one should return True
+print(is_substring('dab', 'abracadabra'))
+
+
+
+lines = ["Haiku frogs in snow",
+         "A limerick came from Nantucket",
+         "Tetrametric drum-beats thrumming, Hiawathianic rhythm."]
+def breakify(lines):
+    return "<br>".join(lines)
+    
+breakify(lines)
+
+import math
+import statistics
+statistics.mean([5, 8, 15, 7, 10, 22, 3, 1, 15])
+statistics.mean([5, 8, 15, 7, 10, 22, 3, 1, 15, 10])
+statistics.mode([5, 8, 15, 7, 10, 22, 3, 1, 15, 10])
+statistics.median([5, 8, 15, 7, 10, 22, 3, 1, 15, 10])
+
+listaya = [5,	15,	3,	3,	8,	10,	12]
+indawy = 1
+total = 0
+while indawy < listaya.index(12):
+    total += listaya[indawy] + 6
+    print(total)
+    indawy += 1
+    print(indawy)
+print(total)
+
+import pandas as pd
+dframe = pd.DataFrame([1, 2, 2, 4])
+pframe = pd.DataFrame([-1, -2, -2, -4])
+dframe.describe()
+pframe.describe()
+
+
+
